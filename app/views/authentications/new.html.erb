@@ -1,0 +1,11 @@
+<%= form_with model: @authentication, url: authentication_path, local: true, data: { turbo: false } do |f| %>
+  <%= render partial: 'shared/form_errors', locals: { f: f } %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit %>
+<% end %>

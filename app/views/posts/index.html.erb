@@ -1,0 +1,4 @@
+<%= link_to 'New post', new_post_path %>
+<% @posts.each do |post| %>
+  <%= render post %>
+<% end %>

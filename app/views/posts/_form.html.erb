@@ -1,0 +1,11 @@
+<%= form_with model: post, local: true, data: { turbo: false } do |f| %>
+  <%= render partial: 'shared/form_errors', locals: { f: f } %>
+
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+
+  <%= f.label :description %>
+  <%= f.rich_text_area :description %>
+
+  <%= f.submit %>
+<% end %>

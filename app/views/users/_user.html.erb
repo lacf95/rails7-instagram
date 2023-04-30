@@ -1,0 +1,13 @@
+<div>
+  <%= user.name %>
+  <div>
+    Followers: <%= user.followers.size %>
+    Following: <%= user.followeds.size %>
+  </div>
+
+  <% if current_user.can_follow?(user) %>
+    <%= link_to 'Follow', follow_user_path(user.id), data: { turbo_method: :post } %>
+  <% elsif current_user.can_unfollow?(user) %>
+    <%= link_to 'Unfollow', unfollow_user_path(user.id), data: { turbo_method: :delete } %>
+  <% end %>
+</div>

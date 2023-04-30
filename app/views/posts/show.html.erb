@@ -1,0 +1,6 @@
+<%= link_to 'Back to index', posts_path %>
+<%= render @post %>
+<% if current_user == @post.user %>
+  <%= link_to 'Edit', edit_post_path(@post.id) %>
+  <%= link_to 'Delete', post_path(@post.id),  data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+<% end %>
